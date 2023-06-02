@@ -1,0 +1,16 @@
+version: "3"
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres1
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    expose:
+      - 5432
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=1234
+    restart: unless-stopped
+volumes:
+  postgres-data:

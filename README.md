@@ -7,7 +7,7 @@ run the following command in order to spin up postgres:<br/>
 cd to ./docker folder and run `docker-compose up -d`<br/><br/>
 
 ## DB Management:
-The DB is managed by Liquibase framework.<br/>
+The DB is managed by a Liquibase framework.<br/>
 SQL procedures are stored at: resource/db/changelog/changes<br/>
 DB credentials can be taken from resources/application.properties file.<br/>
 

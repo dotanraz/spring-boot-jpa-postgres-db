@@ -8,12 +8,6 @@ public class Server {
     public Server() {
     }
 
-    public Server(String ip, String os, String osVersion) {
-        this.ip = ip;
-        this.os = os;
-        this.osVersion = osVersion;
-    }
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", updatable = false, nullable = false)
@@ -27,6 +21,9 @@ public class Server {
 
     @Column(name = "os_version")
     private String osVersion;
+
+    @Column(name = "hw_type")
+    private String hwType;
 
     public long getId() {
         return id;
@@ -58,6 +55,14 @@ public class Server {
 
     public void setOsVersion(String osVersion) {
         this.osVersion = osVersion;
+    }
+
+    public String getHwType() {
+        return hwType;
+    }
+
+    public void setHwType(String hwType) {
+        this.hwType = hwType;
     }
 
     @Override

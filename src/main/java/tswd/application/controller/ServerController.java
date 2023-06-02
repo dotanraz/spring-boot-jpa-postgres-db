@@ -1,32 +1,31 @@
 package tswd.application.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
 import org.springframework.web.bind.annotation.*;
 import tswd.application.model.Server;
-import tswd.application.repository.ServerRepository;
+import tswd.application.service.IServerService;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("api")
 public class ServerController {
 
     @Autowired
-    ServerRepository serverRepository;
+    IServerService serverService;
 
     @PostMapping(path = "/addServer")
     public void produceEvent(@RequestBody Server server) {
-        System.out.println("going to add server: " + server.toString());
-        serverRepository.save(server);
+        serverService.addServer(server);
     }
 
     @GetMapping(path = "/getServers")
     public List<Server> getServers() {
-        Optional<List<Server>> allServers = serverRepository.getAllServers();
-        List<Server> servers = allServers.get();
-        servers.forEach(server -> System.out.println(server.toString()));
-        return servers;
+        return serverService.getAllServers();
+    }
+
+    @GetMapping(path = "/getAllIps")
+    public boolean isIpAvailable(@RequestParam String ip) {
+        return serverService.isIpAvailable(ip);
     }
 
 }

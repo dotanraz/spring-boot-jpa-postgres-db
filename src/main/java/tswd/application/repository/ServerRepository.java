@@ -12,4 +12,8 @@ public interface ServerRepository extends CrudRepository<Server, Integer> {
 
     @Query(value = "SELECT * FROM Server", nativeQuery = true)
     Optional<List<Server>> getAllServers();
+
+    @Query(value = "SELECT ip FROM Server", nativeQuery = true)
+    Optional<List<String>> getAllIpsFromServer();
+
 }

@@ -7,7 +7,7 @@ import tswd.application.service.IServerService;
 import java.util.List;
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/api/server")
 public class ServerController {
 
     @Autowired

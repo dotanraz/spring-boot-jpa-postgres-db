@@ -14,7 +14,7 @@ public class ServerController {
     IServerService serverService;
 
     @PostMapping(path = "/addServer")
-    public void produceEvent(@RequestBody Server server) {
+    public void addServer(@RequestBody Server server) {
         serverService.addServer(server);
     }
 
@@ -23,7 +23,7 @@ public class ServerController {
         return serverService.getAllServers();
     }
 
-    @GetMapping(path = "/getAllIps")
+    @GetMapping(path = "/isIpAvailable")
     public boolean isIpAvailable(@RequestParam String ip) {
         return serverService.isIpAvailable(ip);
     }

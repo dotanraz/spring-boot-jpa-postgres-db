@@ -29,7 +29,7 @@ Example of returned date:<br/>
 
 [{
 "id": 1,
-"ip": "123",
+"ip": "192.168.1.77",
 "os": "linux",
 "osVersion": "fedora",
 "hwType": "x645"

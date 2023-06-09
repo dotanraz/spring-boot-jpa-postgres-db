@@ -28,4 +28,9 @@ public class ServerController {
         return serverService.isIpAvailable(ip);
     }
 
+    @GetMapping(path = "/getIps")
+    public List<String> getAllServerIps() {
+        return serverService.getAllIPsFromServers();
+    }
+
 }

@@ -14,8 +14,7 @@ public class ServerServiceImpl implements IServerService{
     ServerRepository serverRepository;
 
     public boolean isIpAvailable(String ip) {
-        List<String> allIPsFromServers = getAllIPsFromServers();
-        return !allIPsFromServers.contains(ip);
+        return serverRepository.findIpOnServer(ip).isEmpty();
     }
 
     @Override

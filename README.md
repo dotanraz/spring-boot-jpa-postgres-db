@@ -10,6 +10,8 @@ cd to ./docker folder and run `docker-compose up -d`<br/><br/>
 The DB is managed by a Liquibase framework.<br/>
 SQL procedures are stored at: resource/db/changelog/changes<br/>
 DB credentials can be taken from resources/application.properties file.<br/>
+Note: the program is using a default db with the name "postgres" that comes with Postgres image by default.
+If from some reason this will be changed in the future, then make sure to create the db manually.
 
 ## API
 Use the following example to add Server entry to the application:<br/>

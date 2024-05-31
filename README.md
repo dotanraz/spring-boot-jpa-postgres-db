@@ -15,16 +15,19 @@ If from some reason this will be changed in the future, then make sure to create
 
 ## API
 Use the following example to add Server entry to the application:<br/>
-`curl --location --request POST 'http://localhost:8080/api/addServer' --header 'Content-Type: application/json' --data-raw '{
-"ip": "192.168.1.23",
-"os": "linux",
-"osVersion": "fedora",
+`curl --location --request POST 'http://localhost:8080/api/server/addServer' --header 'Content-Type: application/json' --data-raw '{
+{
+"ip": "192.168.1.11",
+"os": "ubuntu",
+"osType": "linux",
+"osVersion": "24.04",
 "hwType": "x400"
+}
 }'`
 
 
 Use the following curl to retrieve all servers from DB:<br/>
-`curl --location --request GET 'http://localhost:8080/api/getServers'`
+`curl --location --request GET 'http://localhost:8080/api/server/getServers'`
 <br/>
 
 Example of returned date:<br/>

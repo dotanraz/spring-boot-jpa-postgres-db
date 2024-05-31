@@ -16,8 +16,11 @@ public class Server {
     @Column(name = "ip")
     private String ip;
 
-    @Column(name = "os_type")
+    @Column(name = "os")
     private String os;
+
+    @Column(name = "os_type")
+    private String osType;
 
     @Column(name = "os_version")
     private String osVersion;
@@ -49,6 +52,14 @@ public class Server {
         this.os = os;
     }
 
+    public String getOsType() {
+        return osType;
+    }
+
+    public void setOsType(String c) {
+        this.osType = osType;
+    }
+
     public String getOsVersion() {
         return osVersion;
     }
@@ -71,7 +82,9 @@ public class Server {
                 "id=" + id +
                 ", ip='" + ip + '\'' +
                 ", os='" + os + '\'' +
+                ", osType='" + osType + '\'' +
                 ", osVersion='" + osVersion + '\'' +
+                ", hwType='" + hwType + '\'' +
                 '}';
     }
 }
